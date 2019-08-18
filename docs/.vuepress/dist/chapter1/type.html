@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>js 的类型判断以及转化 | 小明同学的学习笔记</title>
+    <meta name="description" content="记录成长的点点滴滴">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.616a884d.css" as="style"><link rel="preload" href="/assets/js/app.660555ac.js" as="script"><link rel="preload" href="/assets/js/2.4246010a.js" as="script"><link rel="preload" href="/assets/js/9.7bfdb130.js" as="script"><link rel="prefetch" href="/assets/js/10.996fa503.js"><link rel="prefetch" href="/assets/js/11.625c48ca.js"><link rel="prefetch" href="/assets/js/12.18197ce7.js"><link rel="prefetch" href="/assets/js/3.405508df.js"><link rel="prefetch" href="/assets/js/4.e2e0255b.js"><link rel="prefetch" href="/assets/js/5.653dd45a.js"><link rel="prefetch" href="/assets/js/6.bfa9e3c6.js"><link rel="prefetch" href="/assets/js/7.b95bd05b.js"><link rel="prefetch" href="/assets/js/8.2d72d6c9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.616a884d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">小明同学的学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/chapter1/chapter1/" class="nav-link">开始</a></div><div class="nav-item"><a href="https://github.com/wen-haoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/chapter1/chapter1/" class="nav-link">开始</a></div><div class="nav-item"><a href="https://github.com/wen-haoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>JS基础知识巩固</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/chapter1/" class="sidebar-link">Introduction</a></li><li><a href="/chapter1/this.html" class="sidebar-link">this</a></li><li><a href="/chapter1/type.html" class="active sidebar-link">类型转换</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/chapter1/bibao.html" class="sidebar-link">闭包</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>JS函数式编程以及ES6进阶知识</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/chapter2/function.html" class="sidebar-link">函数式编程</a></li><li><a href="/chapter2/promise.html" class="sidebar-link">实现promise</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="js-的类型判断以及转化"><a href="#js-的类型判断以及转化" aria-hidden="true" class="header-anchor">#</a> js 的类型判断以及转化</h3> <p>JavaScript 具有 7 钟内置的数据类型</p> <ul><li>number</li> <li>string</li> <li>boolean</li> <li>object</li> <li>null</li> <li>undefined</li> <li>symbol</li></ul> <p>除了 object 和 symbol 其余 5 种都是基本数据类型, 而 object 包含 Array, Function, Date 等对象
+常用的判断可以使用</p> <ul><li>typeof</li> <li>instanceof</li> <li>Object.prototype.toString</li> <li>constructor</li></ul> <ol><li><p>typeof 存在的问题
+1.1 typeof null === 'object'
+1.2 不能判断复杂的数据类型除了 function
+但是可以判断 symbol</p></li> <li><p>a instanceOf A
+---判断 a 是否是 A 的实例
+原理是通过实例的<strong>proto</strong>来寻找原型与构造函数是否相同
+实现 instanceOf</p></li></ol> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">newInstanceOf</span><span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> constructor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">// 判断是否为false的值</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>obj <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> constructor<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+obj <span class="token operator">=</span> obj<span class="token punctuation">.</span>__proto__
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/chapter1/this.html" class="prev">
+          this
+        </a></span> <span class="next"><a href="/chapter1/bibao.html">
+          闭包
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.660555ac.js" defer></script><script src="/assets/js/2.4246010a.js" defer></script><script src="/assets/js/9.7bfdb130.js" defer></script>
+  </body>
+</html>

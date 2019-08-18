@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /logo.png
-actionText: 开始学习 →
+heroImage: /pig.png
+actionText: 开始复习 →
 actionLink: /chapter1/
 ---
