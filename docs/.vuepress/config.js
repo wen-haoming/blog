@@ -18,18 +18,23 @@ module.exports = {
         title: 'JS基础知识巩固',
         collapsable: false,
         children: [
-          ['chapter1/', 'Introduction'],
           ['chapter1/this', 'this'],
           ['chapter1/type', '类型转换'],
           ['chapter1/bibao', '闭包']
         ]
       },
       {
-        title: 'JS函数式编程以及ES6进阶知识',
+        title: '高阶函数及es6',
         collapsable: false,
         children: [
-          'chapter2/function',
-          'chapter2/promise'
+          'promise/1'
+        ]
+      },
+      {
+        title: '浏览器知识笔记',
+        collapsable: false,
+        children: [
+          'browers/progress'
         ]
       }
     ]
