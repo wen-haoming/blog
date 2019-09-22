@@ -1,42 +1,100 @@
 module.exports = {
   title: '小明同学的学习笔记',
-  description: '记录成长的点点滴滴',
+  description: '记录成长的点点滴滴,每周更新2-3篇',
   themeConfig: {
     nav: [
-      { text: '开始', link: 'chapter1/' },
+      { text: '开始', link: 'base/this' },
       { text: 'github地址', link: 'https://github.com/wen-haoming' }
     ],
     sidebar: [
       {
-        title: '返回首页',
-        collapsable: false,
-        children: [
-          "/"
-        ]
-      },
-      {
         title: 'JS基础知识巩固',
-        collapsable: false,
+        collapsable: true,
         children: [
-          ['chapter1/this', 'this'],
-          ['chapter1/type', '类型转换'],
-          ['chapter1/bibao', '闭包']
+          'chapter1/this',
+          'chapter1/type',
+          'chapter1/bibao'
         ]
       },
       {
-        title: '高阶函数及es6',
-        collapsable: false,
+        title: '异步编程',
+        collapsable: true,
         children: [
-          'promise/1'
+          'promise/1',
+          'promise/2'
+        ]
+      },
+      {
+        title: 'node专题',
+        collapsable: true,
+        children: [
+          'node/1',
+          'node/2'
         ]
       },
       {
         title: '浏览器知识笔记',
-        collapsable: false,
+        collapsable: true,
         children: [
-          'browers/progress'
+          'browers/progress',
+          'browers/2'
         ]
-      }
+      },
+      {
+        title: '网络专题',
+        collapsable: true,
+        children: [
+          'net'
+        ]
+      },
+      {
+        title: '算法与数据结构',
+        collapsable: true,
+        children: [
+          'data'
+        ]
+      },
+      {
+        title: 'vue',
+        collapsable: true,
+        children: [
+          'vue'
+        ]
+      },
+      {
+        title: 'react',
+        collapsable: true,
+        children: [
+          'react'
+        ]
+      }, {
+        title: 'flutter',
+        collapsable: true,
+        children: [
+          'flutter'
+        ]
+      },
+      {
+        title: '架构类知识',
+        collapsable: true,
+        children: [
+          'architect'
+        ]
+      },
+      {
+        title: 'webpack',
+        collapsable: true,
+        children: [
+          'webpack'
+        ]
+      },
+      {
+        title: '移动端',
+        collapsable: true,
+        children: [
+          'mobile'
+        ]
+      },
     ]
   }
 }
